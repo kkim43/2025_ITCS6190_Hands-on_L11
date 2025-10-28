@@ -11,11 +11,11 @@
 This hands-on project shows how to use key AWS services for simple data analysis.
 
 Steps followed:
-1. Upload the raw CSV file to **Amazon S3**
-2. Create an **IAM Role** that allows access to S3 and Glue
-3. Set up and run a **Glue Crawler** to read the S3 data
-4. Use **CloudWatch** to check the crawler logs and status
-5. Use **Athena** to query the data and save the results as CSV files
+1. Upload the raw CSV file to Amazon S3
+2. Create an IAM Role that allows access to S3 and Glue
+3. Set up and run a Glue Crawler to read the S3 data
+4. Use CloudWatch to check the crawler logs and status
+5. Use Athena to query the data and save the results as CSV files
 
 ---
 
@@ -204,7 +204,7 @@ month | total_sales | sales_growth_pct
 ---
 
 ## Notes
-- The dataset only covers **April to June 2022**, so the monthly analysis shows 3 months of data.  
+- The dataset only covers April to June 2022, so the monthly analysis shows 3 months of data.  
 - There is no profit column in the dataset, so `Amount` was used instead.  
-- All SQL queries were tested and executed successfully in **AWS Athena**.  
+- All SQL queries were tested and executed successfully in AWS Athena.  
 - Each query result was downloaded as a CSV file for submission.
