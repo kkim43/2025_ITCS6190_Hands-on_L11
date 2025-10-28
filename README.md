@@ -29,7 +29,7 @@ Steps followed:
 To calculate the running total of sales (Amount) for each day in 2022.
 
 **SQL Query:**
-
+```sql
 SELECT
     "date" AS order_date,
     SUM(CAST(amount AS DOUBLE))
@@ -39,7 +39,7 @@ FROM "ecommerce_db_l11_hands_on"."itcs6190_l11_handson_801426261_kkim43"
 WHERE year(date_parse(replace("date", '"', ''), '%m-%d-%y')) = 2022
 ORDER BY order_date
 LIMIT 10;
-
+```
 
 **Result Preview:**
 
@@ -58,7 +58,7 @@ order_date | cumulative_sales
 To find which states have the highest total losses (based on cancelled orders).
 
 **SQL Query:**
-
+```sql
 SELECT
     "ship-state" AS state,
     ROUND(SUM(CAST(amount AS DOUBLE)), 2) AS total_loss_amount
@@ -67,7 +67,7 @@ WHERE lower(status) = 'cancelled'
 GROUP BY "ship-state"
 ORDER BY total_loss_amount DESC
 LIMIT 10;
-
+```
 
 **Result Preview:**
 
@@ -86,7 +86,7 @@ UTTAR PRADESH | 625,327.70
 To compare average order values across product categories and order statuses (shipped, cancelled, pending).
 
 **SQL Query:**
-
+```sql
 WITH cleaned AS (
   SELECT
     category AS sub_category,
@@ -109,6 +109,7 @@ WHERE amount_num IS NOT NULL
 GROUP BY 1, 2
 ORDER BY sub_category ASC, avg_order_value DESC
 LIMIT 10;
+```
 
 **Result Preview:**
 
@@ -127,7 +128,7 @@ Blouse | shipped | 518.98 | 802
 To identify the top 3 best-selling products in each category.
 
 **SQL Query:**
-
+```sql
 WITH ranked AS (
   SELECT
     category,
@@ -143,6 +144,7 @@ FROM ranked
 WHERE rank_in_category <= 3
 ORDER BY category ASC, total_sales DESC
 LIMIT 10;
+```
 
 **Result Preview:**
 
@@ -161,7 +163,7 @@ Blouse | J0216 | 38631.0 | 3
 To analyze monthly sales totals and their month-to-month growth rates for 2022.
 
 **SQL Query:**
-
+```sql
 WITH monthly AS (
   SELECT
     date_trunc('month', date_parse(replace("date", '"', ''), '%m-%d-%y')) AS month,
@@ -181,7 +183,7 @@ FROM monthly
 WHERE month >= DATE '2022-04-01'
 ORDER BY month
 LIMIT 10;
-
+```
 
 **Result Preview:**
 
