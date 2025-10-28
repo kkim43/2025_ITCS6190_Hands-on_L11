@@ -4,8 +4,6 @@
 **E-Mail:** kkim43@charlotte.edu
 **Dataset:** [Unlock Profits with E-Commerce Sales Data (Kaggle)](https://www.kaggle.com/datasets/thedevastator/unlock-profits-with-e-commerce-sales-data)
 
----
-
 ## Overview
 This hands-on project shows how to use key AWS services for simple data analysis.
 
@@ -16,11 +14,9 @@ Steps followed:
 4. Use **CloudWatch** to check the crawler logs and status
 5. Use **Athena** to query the data and save the results as CSV files
 
----
 
 ## Queries and Results
 
----
 
 ### Query 1 – Cumulative Sales Over Time (2022)
 
@@ -47,7 +43,6 @@ order_date | cumulative_sales
 04-30-22 | 2.84E7  
 ... | ...
 
----
 
 ### Query 2 – State-wise Unprofitable Orders
 
@@ -73,7 +68,6 @@ KARNATAKA | 827,075.43
 UTTAR PRADESH | 625,327.70  
 ... | ...
 
----
 
 ### Query 3 – Average Order Value by Category and Status
 
@@ -113,7 +107,6 @@ Blouse | cancelled | 533.59 | 75
 Blouse | shipped | 518.98 | 802  
 ... | ... | ... | ...
 
----
 
 ### Query 4 – Top 3 Products by Sales in Each Category
 
@@ -145,8 +138,6 @@ Blouse | J0217 | 62440.0 | 1
 Blouse | J0219 | 43169.0 | 2  
 Blouse | J0216 | 38631.0 | 3  
 ... | ... | ... | ...
-
----
 
 ### Query 5 – Monthly Sales and Growth (Apr–Jun 2022)
 
@@ -182,7 +173,6 @@ month | total_sales | sales_growth_pct
 2022-05-01 | 16530004 | –9.23  
 2022-06-01 | 15498732 | –6.24  
 
----
 
 
 
@@ -200,7 +190,6 @@ month | total_sales | sales_growth_pct
 **Figure 4.** Athena query editor showing results  
 ![Athena](Screenshot4_Athena.png)
 
----
 
 ## Notes
 - The dataset only covers **April to June 2022**, so the monthly analysis shows 3 months of data.  
